@@ -16,7 +16,7 @@ var gulp            = require('gulp'),                  // gulp core
 
 /* STYLE TASK */
 gulp.task('styles', function() {
-    gulp.src('include/scss/*.scss')                     // get the files
+    gulp.src('include/scss/style.scss')                     // get the files
         .pipe(plumber())                                // make sure gulp keeps runing on errors
         .pipe(sass())                                   // compile all sass
         .pipe(size({gzip: true, showFiles: true}))      // display size
@@ -60,4 +60,5 @@ gulp.task('browser-sync', function() {
 
 
 /* DEFAULT TASK */
-gulp.task('default', ['watch', 'broser-sync']);
+
+gulp.task('default', ['watch', 'browser-sync']);
